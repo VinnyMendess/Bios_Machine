@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap');
+
+*{
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+
+}
+body{
+    background-color: var(--Hexa);
+    
+    
+}
+:root{
+
+    --Bit: #C9BA12;
+    --Byte: #41D6FF;
+    --Hexa: #0300E4;
+    --Octal: #090761;
+    --Decimal: #A6A8A7;
+
+}
+.main{
+    display: flex;
+    
+    
+}
+
+
+.aside{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 0.2rem solid;
+    border-color: var(--Byte);
+    padding-left: auto;
+    padding: 10px;
+    
+    
+}
+.aside a{
+    color: var(--Byte);
+    text-decoration: none;
+    font-size: 2rem;
+}
+.article{
+    flex-direction: column;
+    color: var(--Byte);
+    font-size: 40px;
+    margin-left: 10px;
+    margin-right: 20px;
+
+    
+}
+.article .title-1{
+    background-color: var(--Octal);
+    text-align: center;
+    padding: 1px;
+    box-shadow: 4px 4px 0px 1px var(--Byte);
+    -webkit-box-shadow: 4px 4px 0px 1px var(--Byte);
+    -moz-box-shadow: 4px 4px 0px 1px var(--Byte);
+    margin-bottom: 4rem;
+    
+    
+}
+.article .title-2{
+    background-color: var(--Byte);
+    text-align: center;
+    color: var(--Octal);
+    padding: 1px;
+    box-shadow: 4px 4px 0px 1px var(--Octal);
+    -webkit-box-shadow: 4px 4px 0px 1px var(--Octal);
+    -moz-box-shadow: 4px 4px 0px 1px var(--Octal);
+    margin-bottom: 4rem;
+    
+}
+.article .title-3{
+    background-color: var(--Octal);
+    text-align: center;
+    padding: 1px;
+    box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -webkit-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -moz-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    margin-bottom: 4rem;
+    
+}
+
+.section-1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+    
+    
+    
+}
+.section-1 .div_valor{
+    margin-bottom: 5.5rem;
+    border: var(--Byte) 1px solid;
+    padding: 10px; 
+}
+.section-1 .div_valor p{
+    background-color: var(--Octal);
+    padding: auto;
+    color: var(--Byte);
+    box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -webkit-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -moz-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    padding: 0px 50px 0px 50px;
+    
+
+}
+
+.section-1 .div_valor input{
+    background-color: black;
+    border: var(--Byte) 1px solid;
+    color: var(--Byte);
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -webkit-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -moz-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+}
+
+.section-1 .div_valor input::placeholder{
+    color: var(--Byte);
+    padding: none;
+
+}
+.section-1 .div_valor  button{
+    background-color: var(--Hexa);
+    color: var(--Byte);
+    border: var(--Byte) 1px solid;
+    padding: 10px;
+    box-shadow: 4px 4px 0px 1px rgb(0, 0, 0);
+    -webkit-box-shadow: 4px 4px 0px 1px rgb(0, 0, 0);
+    -moz-box-shadow: 4px 4px 0px 1px rgb(0, 0, 0);
+}
+.section-1  .div_valor button:hover{
+    cursor: pointer;
+}
+
+
+
+/* ------------- SECTION 2 -------------*/
+
+.section-2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.section-2 .div_resultado{
+    margin-bottom: 49px;
+    border: var(--Byte) 1px solid;
+    padding: 10px; 
+}
+
+
+.section-2 .div_resultado .box {
+    background-color: var(--Octal);
+    padding: auto;
+    color: var(--Bit);
+    box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -webkit-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -moz-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    padding: 0px 50px 0px 50px;
+}
+.section-2 .div_resultado  p{
+    text-align: center;
+    color: var(--Decimal);
+}
+.section-2 .div_resultado  .saida{
+    text-align: center;
+    min-height: 25px;
+    max-height: 50px;
+    display: block;
+    background-color: black;
+    border: var(--Bit) 1px solid;
+    color: var(--Bit);
+    width: 100%;
+    
+    box-shadow: 4px 4px 0px 1px var(--Bit);
+    -webkit-box-shadow: 4px 4px 0px 1px var(--Bit);
+    -moz-box-shadow: 4px 4px 0px 1px var(--Bit);
+    
+}
+
+.section-2 .div_resultado_octal  p{
+    text-align: center;
+    color: var(--Decimal);
+}
+.section-2 .div_resultado_octal  .saida{
+    text-align: center;
+    min-height: 25px;
+    max-height: 50px;
+    background-color: black;
+    border: var(--Bit) 1px solid;
+    color: var(--Bit);
+    width: 100%;
+    box-shadow: 4px 4px 0px 1px var(--Bit);
+    -webkit-box-shadow: 4px 4px 0px 1px var(--Bit);
+    -moz-box-shadow: 4px 4px 0px 1px var(--Bit);
+    
+}
+.section-2 .div_resultado_hex  p{
+    text-align: center;
+    color: var(--Decimal);
+}
+.section-2 .div_resultado_hex  .saida{
+    text-align: center;
+    min-height: 25px;
+    max-height: 50px;
+    background-color: black;
+    border: var(--Bit) 1px solid;
+    color: var(--Bit);
+    width: 100%;
+    box-shadow: 4px 4px 0px 1px var(--Bit);
+    -webkit-box-shadow: 4px 4px 0px 1px var(--Bit);
+    -moz-box-shadow: 4px 4px 0px 1px var(--Bit);
+    
+}
+
+.ultima-saida{
+    text-align: center;
+    min-height: 25px;
+    max-height: 50px;
+    background-color: black;
+    border: var(--Decimal) 1px solid;
+    color: var(--Decimal);
+    width: 100%;
+    box-shadow: 4px 4px 0px 1px var(--Decimal);
+    -webkit-box-shadow: 4px 4px 0px 1px var(--Decimal);
+    -moz-box-shadow: 4px 4px 0px 1px var(--Decimal);
+}
+
+/* ------------- SECTION 3 -------------*/
+
+
+.section-3{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+
+
+
+.section-3 .div_conta{
+    margin-bottom: 198px;
+    border: var(--Byte) 1px solid;
+    padding: 35px 10px 10px 10px;
+    
+    
+    
+
+
+}
+.section-3 .div_conta a{
+    
+    background-color: var(--Octal);
+    color: var(--Decimal);
+    padding: auto;
+    box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -webkit-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    -moz-box-shadow: 4px 4px 0px 1px rgba(65,214,255,1);
+    padding: 0px 50px 0px 50px;
+    cursor: pointer;
+    
+}
+
+
