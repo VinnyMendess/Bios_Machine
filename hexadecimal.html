@@ -1,0 +1,207 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPTecher's Machine</title>
+
+
+
+
+</head>
+
+<body>
+  
+        
+        <header>
+            <h1>BIOS Machine</h1>
+        </header>
+
+        
+
+ <main class="main">
+        <aside class="aside">
+            <a href="decimal.html">Decimal</a>
+            <a href="binario.html">Binário</a>
+            <a href="octal.html">Octal</a>
+            <a href="hexadecimal.html">Hexadecimal</a>
+            <a href="">Calcular</a>
+        </aside>
+                
+                <article class="article">
+                    <div class="title-1">
+                        <p>HEXA <br> PARA <br> BINÁRIO</p>
+                    </div>
+                    <div class="title-2">
+                        <p>HEXA <br> PARA <br> DECIMAL</p>
+                    </div>
+                    <div class="title-3">
+                        <p>HEXA<br> PARA <br> OCTAL</p>
+                    </div>
+                </article>
+
+        <section class="section-1">
+
+                <div class="div_valor">
+                    <p>Digite um Valor</p>
+                    <input class="input_dec" id="input_hex_bin" type="text" placeholder="Ex: 42">
+                    <br><br>
+                    <div class="border">
+                        <button onclick="converterHexBin()">Converter</button>
+                    </div>
+                </div>
+
+                 <div class="div_valor">
+                    <p>Digite um Valor</p>
+                    <input class="input_dec" id="input_hex_dec" type="text" placeholder="Ex: 42">
+                    <br><br>
+                    <div class="border">
+                         <button onclick="converterHexDec()">Converter</button>
+                    </div>
+                   
+                </div>
+
+                <div class="div_valor">
+                    <p>Digite um Valor</p>
+                    <input class="input_dec" id="input_hex_hex" type="text" placeholder="Ex: 42">
+                    <br><br>
+                    <div class="border">
+                        <button onclick="converterHexOctal()">Converter</button>
+                    </div>
+                    
+                </div>
+
+            </section>
+
+           
+                <!--Área de saída de resultados-->
+
+            <section class="section-2">
+                 <div class="div_resultado" id="id_resultado">
+                    <div class="box">
+                        <p>Resultado</p>
+                    </div>
+                    <div id="div_hex_bin" class="saida"></div>
+                    <p>Último Resultado</p>
+                    <div id="div_hex_bin_ultimo" class="ultima-saida"></div>
+                </div>
+
+                <div class="div_resultado_octal">
+                   <div class="div_resultado" id="id_resultado">
+                    <div class="box">
+                        <p>Resultado</p>
+                    </div>
+                    <div id="div_hex_dec" class="saida"></div>
+                    <p>Último Resultado</p>
+                    <div id="div_hex_dec_ultimo" class="ultima-saida"></div>
+                </div>   
+
+                <div class="div_resultado_hex">
+                    <div class="div_resultado" id="id_resultado">
+                    <div class="box">
+                        <p>Resultado</p>
+                    </div>
+                    <div id="div_hex_octal" class="saida"></div>
+                    <p>Último Resultado</p>
+                    <div id="div_hex_octal_ultimo" class="ultima-saida"></div>
+                </div>
+
+
+
+
+                
+            </section>
+                
+            <section class="section-3">
+                <div class="div_conta">
+                   <a onclick="mostrar()"">Conta</a>
+                </div>
+                <div id="div_conta_resultado"></div>
+                
+                <div class="div_conta">
+                    <a onclick="mostrar()"">Conta</a>
+                </div>
+                <div id="div_conta_resultado"></div>
+
+                <div class="div_conta">
+                    <a onclick="mostrar()"">Conta</a>
+                </div>
+                <div id="div_conta_resultado"></div>
+            </section>
+
+
+            
+
+                
+                
+           
+</main>
+
+       
+
+       
+
+    <script>
+
+
+        // Variveis globais para acumular o histórico anterior da conversão
+        var historico_bin = 0
+        var historico_dec = 0
+        var historico_octal = 0
+
+         //Variaveis globais para iniciar em 0
+        var hex_resultado = 0
+        var hex_resultado_dec = 0
+        var hex_resultado_hex = 0
+
+        function converterHexBin() {
+            historico_bin = hex_resultado
+            hex_resultado = input_hex_bin.value;
+            
+            div_hex_bin_ultimo.innerHTML = historico_bin.toString(2);
+            
+            hex_resultado = parseInt(hex_resultado, 16)
+
+            div_hex_bin.innerHTML = hex_resultado.toString(2);
+
+            
+            
+            
+        }
+        function converterHexDec(){
+            historico_dec = hex_resultado
+            hex_resultado = input_hex_dec.value;
+
+            div_hex_dec_ultimo.innerHTML = historico_dec.toString(10);
+
+            hex_resultado = parseInt(hex_resultado, 16)
+      
+
+            div_hex_dec.innerHTML = hex_resultado.toString(10);
+        }
+        function converterHexOctal(){
+            historico_hex = hex_resultado
+            hex_resultado = input_hex_hex.value;
+
+            hex_resultado = parseInt(hex_resultado, 16)
+
+            div_hex_octal_ultimo.innerHTML = historico_hex.toString(8);
+
+            div_hex_octal.innerHTML = hex_resultado.toString(8);
+        }
+
+        function mostrar(){
+            hex_resultado = Number(input_hex_hex.value);
+
+            div_conta_resultado.innerHTML = `${hex_resultado} - 32768 = `
+        }
+        
+    </script>
+</body>
+
+</html>

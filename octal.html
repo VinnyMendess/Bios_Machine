@@ -26,22 +26,22 @@
 
  <main class="main">
         <aside class="aside">
-            <a href="">Decimal</a>
-            <a href="">Binário</a>
-            <a href="">Octal</a>
-            <a href="">Hexadecimal</a>
+            <a href="decimal.html">Decimal</a>
+            <a href="binario.html">Binário</a>
+            <a href="octal.html">Octal</a>
+            <a href="hexadecimal.html">Hexadecimal</a>
             <a href="">Calcular</a>
         </aside>
                 
                 <article class="article">
                     <div class="title-1">
-                        <p>DECIMAL <br> PARA <br> BINÁRIO</p>
+                        <p>OCTAL <br> PARA <br> BINÁRIO</p>
                     </div>
                     <div class="title-2">
-                        <p>DECIMAL <br> PARA <br> OCTAL</p>
+                        <p>OCTAL <br> PARA <br> DECIMAL</p>
                     </div>
                     <div class="title-3">
-                        <p>DECIMAL <br> PARA <br> HEXADECIMAL</p>
+                        <p>OCTAL <br> PARA <br> HEXADECIMAL</p>
                     </div>
                 </article>
 
@@ -49,29 +49,29 @@
 
                 <div class="div_valor">
                     <p>Digite um Valor</p>
-                    <input class="input_dec" id="input_dec_bin" type="text" placeholder="Ex: 42">
+                    <input class="input_dec" id="input_octal_bin" type="text" placeholder="Ex: 42">
                     <br><br>
                     <div class="border">
-                        <button onclick="converterDecBin()">Converter</button>
+                        <button onclick="converterOctalBin()">Converter</button>
                     </div>
                 </div>
 
                  <div class="div_valor">
                     <p>Digite um Valor</p>
-                    <input class="input_dec" id="input_dec_octal" type="text" placeholder="Ex: 42">
+                    <input class="input_dec" id="input_octal_dec" type="text" placeholder="Ex: 42">
                     <br><br>
                     <div class="border">
-                         <button onclick="converterDecOctal()">Converter</button>
+                         <button onclick="converterOctalDec()">Converter</button>
                     </div>
                    
                 </div>
 
                 <div class="div_valor">
                     <p>Digite um Valor</p>
-                    <input class="input_dec" id="input_dec_hex" type="text" placeholder="Ex: 42">
+                    <input class="input_dec" id="input_octal_hex" type="text" placeholder="Ex: 42">
                     <br><br>
                     <div class="border">
-                        <button onclick="converterDecHex()">Converter</button>
+                        <button onclick="converterOctalHex()">Converter</button>
                     </div>
                     
                 </div>
@@ -86,9 +86,9 @@
                     <div class="box">
                         <p>Resultado</p>
                     </div>
-                    <div id="div_dec_bin" class="saida"></div>
+                    <div id="div_octal_bin" class="saida"></div>
                     <p>Último Resultado</p>
-                    <div id="div_dec_bin_ultimo" class="ultima-saida"></div>
+                    <div id="div_octal_bin_ultimo" class="ultima-saida"></div>
                 </div>
 
                 <div class="div_resultado_octal">
@@ -96,9 +96,9 @@
                     <div class="box">
                         <p>Resultado</p>
                     </div>
-                    <div id="div_dec_octal" class="saida"></div>
+                    <div id="div_octal_dec" class="saida"></div>
                     <p>Último Resultado</p>
-                    <div id="div_dec_octal_ultimo" class="ultima-saida"></div>
+                    <div id="div_octal_dec_ultimo" class="ultima-saida"></div>
                 </div>   
 
                 <div class="div_resultado_hex">
@@ -106,9 +106,9 @@
                     <div class="box">
                         <p>Resultado</p>
                     </div>
-                    <div id="div_dec_hex" class="saida"></div>
+                    <div id="div_octal_hex" class="saida"></div>
                     <p>Último Resultado</p>
-                    <div id="div_dec_hex_ultimo" class="ultima-saida"></div>
+                    <div id="div_octal_hex_ultimo" class="ultima-saida"></div>
                 </div>
 
 
@@ -121,14 +121,17 @@
                 <div class="div_conta">
                    <a onclick="mostrar()"">Conta</a>
                 </div>
+                <div id="div_conta_resultado"></div>
                 
                 <div class="div_conta">
                     <a onclick="mostrar()"">Conta</a>
                 </div>
+                <div id="div_conta_resultado"></div>
 
                 <div class="div_conta">
                     <a onclick="mostrar()"">Conta</a>
                 </div>
+                <div id="div_conta_resultado"></div>
             </section>
 
 
@@ -148,46 +151,56 @@
 
         // Variveis globais para acumular o histórico anterior da conversão
         var historico_bin = 0
-        var historico_octal = 0
+        var historico_dec = 0
         var historico_hex = 0
 
          //Variaveis globais para iniciar em 0
-        var decimal_resultado = 0
-        var decimal_resultado_octal = 0
-        var decimal_resultado_hex = 0
+        var octal_resultado = 0
+        var octal_resultado_dec = 0
+        var octal_resultado_hex = 0
 
-        function converterDecBin() {
-            historico_bin = decimal_resultado
-            decimal_resultado = Number(input_dec_bin.value);
+        function converterOctalBin() {
+            historico_bin = octal_resultado
+            octal_resultado = Number(input_octal_bin.value);
             
-            div_dec_bin_ultimo.innerHTML = historico_bin.toString(2);
+            div_octal_bin_ultimo.innerHTML = historico_bin.toString(2);
             
-            
-            div_dec_bin.innerHTML = decimal_resultado.toString(2);
+            octal_resultado = parseInt(octal_resultado, 8)
+
+            div_octal_bin.innerHTML = octal_resultado.toString(2);
 
             
             
             
         }
-        function converterDecOctal(){
-            historico_octal = decimal_resultado
-            var decimal_resultado = Number(input_dec_octal.value);
+        function converterOctalDec(){
+            historico_dec = octal_resultado
+            octal_resultado = Number(input_octal_dec.value);
 
-            div_dec_octal_ultimo.innerHTML = historico_octal.toString(8);
+            div_octal_dec_ultimo.innerHTML = historico_dec.toString(10);
 
-            div_dec_octal.innerHTML = decimal_resultado.toString(8);
+            octal_resultado = parseInt(octal_resultado, 8)
+      
+
+            div_octal_dec.innerHTML = octal_resultado.toString(10);
         }
-        function converterDecHex(){
-            historico_hex = decimal_resultado
-            var decimal_resultado = Number(input_dec_hex.value);
+        function converterOctalHex(){
+            historico_hex = octal_resultado
+            octal_resultado = Number(input_octal_hex.value);
 
-            div_dec_hex_ultimo.innerHTML = historico_hex.toString(16);
+            octal_resultado = parseInt(octal_resultado, 8)
 
-            div_dec_hex.innerHTML = decimal_resultado.toString(16).toUpperCase()
+            div_octal_hex_ultimo.innerHTML = historico_hex.toString(16).toUpperCase();
+
+            div_octal_hex.innerHTML = octal_resultado.toString(16).toUpperCase()
         }
 
         function mostrar(){
+            octal_resultado = Number(input_octal_hex.value);
 
+            octal
+                
+            div_conta_resultado.innerHTML = `${octal_resultado} - 32768 = `
         }
         
     </script>

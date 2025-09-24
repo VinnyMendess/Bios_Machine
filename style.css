@@ -208,6 +208,8 @@ body{
 .section-2 .div_resultado_hex  p{
     text-align: center;
     color: var(--Decimal);
+    margin-top: 10px;
+    
 }
 .section-2 .div_resultado_hex  .saida{
     text-align: center;
@@ -222,7 +224,6 @@ body{
     -moz-box-shadow: 4px 4px 0px 1px var(--Bit);
     
 }
-
 .ultima-saida{
     text-align: center;
     min-height: 25px;

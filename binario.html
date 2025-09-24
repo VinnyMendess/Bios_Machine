@@ -1,0 +1,218 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPTecher's Machine</title>
+
+
+
+
+</head>
+
+<body>
+  
+        
+        <header>
+            <h1>BIOS Machine</h1>
+        </header>
+
+        
+
+ <main class="main">
+        <aside class="aside">
+            <a href="decimal.html">Decimal</a>
+            <a href="binario.html">Binário</a>
+            <a href="octal.html">Octal</a>
+            <a href="hexadecimal.html">Hexadecimal</a>
+            <a href="">Calcular</a>
+        </aside>
+                
+                <article class="article">
+                    <div class="title-1">
+                        <p>BINÁRIO <br> PARA <br> DECIMAL</p>
+                    </div>
+                    <div class="title-2">
+                        <p>BINÁRIO  <br> PARA <br> OCTAL</p>
+                    </div>
+                    <div class="title-3">
+                        <p>BINÁRIO <br> PARA <br> HEXADECIMAL</p>
+                    </div>
+                </article>
+
+        <section class="section-1">
+
+                <div class="div_valor">
+                    <p>Digite um Valor</p>
+                    <input class="input_dec" id="input_bin_dec" type="text" placeholder="Ex: 42">
+                    <br><br>
+                    <div class="border">
+                        <button onclick="converterBinDec()">Converter</button>
+                    </div>
+                </div>
+
+                 <div class="div_valor">
+                    <p>Digite um Valor</p>
+                    <input class="input_dec" id="input_bin_octal" type="text" placeholder="Ex: 42">
+                    <br><br>
+                    <div class="border">
+                         <button onclick="converterBinOctal()">Converter</button>
+                    </div>
+                   
+                </div>
+
+                <div class="div_valor">
+                    <p>Digite um Valor</p>
+                    <input class="input_bin" id="input_bin_hex" type="text" placeholder="Ex: 42">
+                    <br><br>
+                    <div class="border">
+                        <button onclick="converterBinHex()">Converter</button>
+                    </div>
+                    
+                </div>
+
+            </section>
+
+           
+                <!--Área de saída de resultados-->
+
+            <section class="section-2">
+                 <div class="div_resultado" id="id_resultado">
+                    <div class="box">
+                        <p>Resultado</p>
+                    </div>
+                    <div id="div_bin_dec" class="saida"></div>
+                    <p>Último Resultado</p>
+                    <div id="div_bin_dec_ultimo" class="ultima-saida"></div>
+                </div>
+
+                <div class="div_resultado_octal">
+                   <div class="div_resultado" id="id_resultado">
+                    <div class="box">
+                        <p>Resultado</p>
+                    </div>
+                    <div id="div_bin_octal" class="saida"></div>
+                    <p>Último Resultado</p>
+                    <div id="div_bin_octal_ultimo" class="ultima-saida"></div>
+                </div>   
+
+                <div class="div_resultado_hex">
+                    <div class="div_resultado" id="id_resultado">
+                    <div class="box">
+                        <p>Resultado</p>
+                    </div>
+                    <div id="div_bin_hex" class="saida"></div>
+                    <p>Último Resultado</p>
+                    <div id="div_bin_hex_ultimo" class="ultima-saida"></div>
+                </div>
+
+
+
+
+                
+            </section>
+                
+            <section class="section-3">
+                <div class="div_conta">
+                   <a onclick="mostrar()"">Conta</a>
+                </div>
+                <div id="div_conta_resultado"></div>
+                
+                <div class="div_conta">
+                    <a onclick="mostrar()"">Conta</a>
+                </div>
+                <div id="div_conta_resultado"></div>
+
+                <div class="div_conta">
+                    <a onclick="mostrar()"">Conta</a>
+                </div>
+                <div id="div_conta_resultado"></div>
+            </section>
+
+
+            
+
+                
+                
+           
+</main>
+
+       
+
+       
+
+    <script>
+
+
+        // Variveis globais para acumular o histórico anterior da conversão
+        var historico_dec = 0
+        var historico_octal = 0
+        var historico_hex = 0
+
+         //Variaveis globais para iniciar em 0
+        var bin_resultado = 0
+        var bin_resultado_octal = 0
+        var bin_resultado_hex = 0
+
+        function converterBinDec() {
+            historico_dec = bin_resultado
+            bin_resultado = Number(input_bin_dec.value);
+            
+           //historico_dec = parseInt(historico_dec, 2) Não funfou
+
+            div_bin_dec_ultimo.innerHTML = historico_dec;
+
+            bin_resultado = parseInt(bin_resultado, 2)
+
+            div_bin_dec.innerHTML = bin_resultado;
+
+            
+            
+            
+        }
+        function converterBinOctal(){
+
+            // O caminho da luz é o binário
+            historico_octal = bin_resultado
+            bin_resultado = Number(input_bin_octal.value);
+
+           // historico_octal = parseInt(historico_octal, 2) Não funfou
+
+            div_bin_octal_ultimo.innerHTML = historico_octal.toString(8);
+
+            // transformar o binario em decimal
+            bin_resultado = parseInt(bin_resultado, 2)
+
+            // depois transformar o decimal em octal    
+            div_bin_octal.innerHTML = bin_resultado.toString(8);
+        }
+        function converterBinHex(){
+            historico_hex = bin_resultado
+            bin_resultado = Number(input_bin_hex.value);
+
+            //historico_hex = parseInt(historico_hex, 2) Não funfou
+
+            div_bin_hex_ultimo.innerHTML = historico_hex.toString(16).toUpperCase();
+
+            //bin_resultado = parseInt(bin_resultado, 16)
+            bin_resultado = parseInt(bin_resultado, 2)
+            div_bin_hex.innerHTML = bin_resultado.toString(16).toUpperCase()
+        }
+
+        function mostrar(){
+            var bin_resultado = Number(input_bin_hex.value);
+
+            bin
+                
+            div_conta_resultado.innerHTML = `${bin_resultado} - 32768 = `
+        }
+        
+    </script>
+</body>
+
+</html>
